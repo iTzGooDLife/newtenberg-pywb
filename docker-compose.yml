@@ -1,0 +1,16 @@
+version: "3.4"
+
+services:
+  pywb:
+    image: pywb
+    build:
+      context: ./app
+      dockerfile: Dockerfile
+    restart: always
+    volumes:
+      - pywb-data:/web-archive
+    ports:
+      - "8080:8080"
+    
+volumes:
+  pywb-data:
